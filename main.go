@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"net/smtp"
@@ -18,9 +17,6 @@ var (
 )
 
 func main() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("Cannot load env: %s", err)
-	}
 
 	domain = getenv("DOMAIN", "localhost")
 	port = getenv("PORT", "8080")

@@ -9,6 +9,5 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=builder /go/bin/smsapi2email .
-COPY .env .
 EXPOSE 8080
 CMD ["./smsapi2email"]
